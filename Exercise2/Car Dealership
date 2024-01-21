@@ -1,0 +1,92 @@
+# This is a program to store new vehicle inventory and assist with monthly payments
+
+brand = "Koenigsegg"
+
+models = ["Jesko", "Agera", "Gemera", "CC850", "Regera"]
+
+models.append("One")
+
+
+
+colours = ['Red', 'Black', 'Gray', 'Orange', 'Green']
+colours[4] = 'White'
+
+year = 2024
+
+Jesko_msrp = 3000000
+Agera_msrp = 1500000
+Gemera_msrp = 1700000
+CC850_msrp = 3650000
+Regera_msrp = 2000000
+One_msrp = 6000000
+
+four_yr_loan = 48
+five_yr_loan = 60
+six_yr_loan = 72
+
+Guest_name = "Brandon"
+
+
+
+banner = (
+'''
+ ______     ______     ______     __  __     ______     __    __     ______                                   
+/\  ___\   /\  == \   /\  __ \   /\ \_\ \   /\  __ \   /\ "-./  \   /\  ___\                                  
+\ \ \__ \  \ \  __<   \ \  __ \  \ \  __ \  \ \  __ \  \ \ \-./\ \  \ \___  \                                 
+ \ \_____\  \ \_\ \_\  \ \_\ \_\  \ \_\ \_\  \ \_\ \_\  \ \_\ \ \_\  \/\_____\                                
+  \/_____/   \/_/ /_/   \/_/\/_/   \/_/\/_/   \/_/\/_/   \/_/  \/_/   \/_____/                                
+                                                                                                              
+ __  __     ______     ______     __   __     __     ______     ______     ______     ______     ______       
+/\ \/ /    /\  __ \   /\  ___\   /\ ''-.\ \  /\ \   /\  ___\   /\  ___\   /\  ___\   /\  ___\   /\  ___\      
+\ \  _"-.  \ \ \/\ \  \ \  __\   \ \ \-.  \  \ \ \  \ \ \__ \  \ \___  \  \ \  __\   \ \ \__ \  \ \ \__ \     
+ \ \_\ \_\  \ \_____\  \ \_____\  \ \_''\_\   \ \_\  \ \_____\  \/\_____\  \ \_____\  \ \_____\  \ \_____\    
+  \/_/\/_/   \/_____/   \/_____/   \/_/ \/_/   \/_/   \/_____/   \/_____/   \/_____/   \/_____/   \/_____/    
+                                                                                                              
+ _____     ______     ______     __         ______     ______     ______     __  __     __     ______         
+/\  __-.  /\  ___\   /\  __ \   /\ \       /\  ___\   /\  == \   /\  ___\   /\ \_\ \   /\ \   /\  == \        
+\ \ \/\ \ \ \  __\   \ \  __ \  \ \ \____  \ \  __\   \ \  __<   \ \___  \  \ \  __ \  \ \ \  \ \  _-/        
+ \ \____-  \ \_____\  \ \_\ \_\  \ \_____\  \ \_____\  \ \_\ \_\  \/\_____\  \ \_\ \_\  \ \_\  \ \_\          
+  \/____/   \/_____/   \/_/\/_/   \/_____/   \/_____/   \/_/ /_/   \/_____/   \/_/\/_/   \/_/   \/_/
+  ''')
+
+
+print(banner)
+
+print(f"Welcome, {Guest_name}, to my new {brand} dealership!")
+sorted_models = ', '.join(sorted(models))
+printed_colours = ', '.join(sorted(colours, reverse = True))
+model_intro = (f"We have the {sorted_models} models in the {year} model available in {printed_colours}.")
+
+print(f"{model_intro.title()}")
+
+
+
+print()
+
+AgPayment5yr = Agera_msrp/five_yr_loan
+AgPayment4yr = Agera_msrp/four_yr_loan
+AgPayment6yr = Agera_msrp/six_yr_loan
+AgPayment5yr_intest = (Agera_msrp + Agera_msrp*0.03)/five_yr_loan
+cashdiscount = 0.1
+AgPayment_cash = Agera_msrp - (Agera_msrp * cashdiscount)
+
+print(f"The Agera on a five year plan costs {AgPayment5yr} per month.")
+print(f"The Agera on a five year plan plus intrest costs {AgPayment5yr_intest} per month.")
+print(f"The Agera paid full in cash gives a 10% discount and therefore costs {AgPayment_cash}.")
+print(f"The Agera on a four year plan costs {AgPayment4yr} per month.")
+print(f"The Agera on a six year plan costs {AgPayment6yr} per month.")
+
+print()
+
+CcPayment5yr = CC850_msrp/five_yr_loan
+GePayment5yr = Gemera_msrp/five_yr_loan
+JePayment5yr = Jesko_msrp/five_yr_loan
+OnePayment5yr = One_msrp/five_yr_loan
+RePayment5yr = Regera_msrp/five_yr_loan
+
+print(f"The Cc850 on a five year plan costs {CcPayment5yr} per month.")
+print(f"The Gemera on a five year plan costs {GePayment5yr} per month.")
+print(f"The Jesko on a five year plan costs {JePayment5yr} per month.")
+print(f"The One on a five year plan costs {OnePayment5yr} per month.")
+print(f"The Regera on a five year plan costs {RePayment5yr} per month.")
+

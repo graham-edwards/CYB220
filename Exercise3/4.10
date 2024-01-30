@@ -1,0 +1,10 @@
+#It said to use one of the programs I worte
+#during the chapter to use this but I couldn't
+#find one that suited it's needs
+
+
+colours = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
+
+print(f"The first three items in the list are {colours[0:3]}")
+print(f"Three items in middle of the list are {colours[2:5]}")
+print(f"The last three items in the list are {colours[4:7]}")

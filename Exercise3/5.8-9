@@ -1,0 +1,14 @@
+usernames = []
+if len(usernames) == 0:
+    print("We need to find some users!")
+
+
+usernames = ['admin', 'Jokey', 'Jazzle', 'Dioginese', 'Erin']
+
+for username in usernames:
+    if username == 'admin':
+        print('Hello, Admin. Would you like to see our profit margins for today?')
+    else:
+        print(f"Hello {username}.")
+
+

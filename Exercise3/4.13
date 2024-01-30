@@ -1,0 +1,13 @@
+buffet = ('Mac and Cheese', 'Mashed Potatoes', 'Broccoli', 'Ham', 'Collard Greens')
+print("Our menu for today is:")
+for value in range(0,5):
+    print(buffet[value])
+print("\n")
+
+buffet[3] = 'Bread'
+#This should cause error. The exercise asked for it
+
+buffet = ('Mac and Cheese', 'Mashed Potatoes', 'Broccoli', 'Turkey', 'Cooked Carrots')
+print("Our menu for today is:")
+for value in range(0,5):
+    print(buffet[value])

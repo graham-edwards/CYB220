@@ -1,0 +1,35 @@
+car = 'subaru'
+print("Is car == 'subaru'? I predict True.")
+print(car == 'subaru')
+print("is car == 'toyota'? I predict False")
+print(car == 'toyota')
+age = 17
+print (f"age = {age}")
+print("Is age > 13? I predict True")
+print( age > 13)
+print("Is age < 13? I predict False")
+print(age < 13)
+print("Is age >= 19? I predict False")
+print(age >= 19)
+print("Is age <= 17? I predict True")
+print(age <= 17)
+
+print("Is age > 13 < 19? I predict True")
+print( age > 13 and age < 19)
+print("Is age > 13 < 15? I predict False")
+print(age > 13 and age < 15)
+print("Is age < 19 > 21? I predict False")
+print(age < 19 and age > 21)
+print("Is age > 15 > 16? I predict True")
+print(age > 15 or age > 16)
+
+
+users = ['DAVE', 'reid', 'jack']
+
+print("Is users[2] == 'jack'? I predict True")
+print(users[2] == 'jack')
+print("Is users[2] == 'mary'? I predict False")
+print(users[2] == 'mary')
+
+print("Is users[2] == 'mary'? I predict True")
+print(users[0].lower() == 'dave')

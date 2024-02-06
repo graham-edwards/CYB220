@@ -1,0 +1,20 @@
+flavor_poll = {}
+
+while True:
+    username = input("Enter your username (type 'quit' to exit): ")
+
+    if username.lower() == 'quit':
+        break
+
+    valid_flavors = ['Ubuntu', 'Kubuntu', 'Xubuntu', 'Lubuntu', 'Ubuntu MATE']
+
+    flavor = input("Enter your favorite Ubuntu flavor: ")
+
+    if flavor in valid_flavors:
+        flavor_poll[username] = flavor
+    else:
+        print("Invalid Ubuntu flavor. Please choose from the following options:", valid_flavors)
+
+print("Poll results:")
+for user, fav_flavor in flavor_poll.items():
+    print(f"{user}'s favorite Ubuntu flavor is {fav_flavor}.")

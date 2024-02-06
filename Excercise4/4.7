@@ -1,0 +1,12 @@
+print("\nTask 7:")
+county_cities_list = [
+    {'Anderson': {'City1': 50000, 'City2': 30000, 'City3': 20000, 'City4': 15000, 'City5': 10000}},
+    {'Charleston': {'CityA': 200000, 'CityB': 150000, 'CityC': 120000, 'CityD': 90000, 'CityE': 80000}},
+    # Add more dictionaries for other counties
+]
+
+for county_cities in county_cities_list:
+    county_name = list(county_cities.keys())[0]
+    cities_dict = county_cities[county_name]
+    for city, population in cities_dict.items():
+        print(f"In {city.title()}, the current population is {population}.")

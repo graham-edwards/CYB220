@@ -1,0 +1,16 @@
+person_dict = {
+    'f_name': 'Abby',
+    'l_name': 'Gail',
+    'age': 30,
+    'hometown': 'Summerville',
+    'current_city': 'Anderson',
+    'username': 'abigail123'
+}
+print("Task 1:")
+print("Entire dictionary:", person_dict)
+for key, value in person_dict.items():
+    print(f"{key}: {value}")
+
+print("\nTask 2:")
+print(f"This person's first name is {person_dict['f_name']}, last name is {person_dict['l_name']}, and their username is {person_dict['username']}.")
+print(f"For security reasons, we might ask them for their hometown, which is {person_dict['hometown']}.")

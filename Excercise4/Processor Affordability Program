@@ -1,0 +1,17 @@
+user_money = float(input("How much money do you have? $"))
+
+i3_price = 200
+i5_price = 400
+i7_price = 600
+i9_price = 800
+
+if user_money >= i9_price:
+    print("You can afford an i9 processor.")
+elif user_money >= i7_price:
+    print("You can afford an i7 processor.")
+elif user_money >= i5_price:
+    print("You can afford an i5 processor.")
+elif user_money >= i3_price:
+    print("You can afford an i3 processor.")
+else:
+    print("You cannot afford any processors at the moment.")

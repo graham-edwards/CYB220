@@ -1,0 +1,19 @@
+
+definitions_dict = {
+    'python': 'A high-level programing language known for its readability and versatility.',
+    'variable': 'A container for storing data values.',
+    'list': 'An ordered collection of item.',
+    'method': 'A function that is associated with an object.',
+    'if statement': 'A conditional statement that executes code based on a given condition.',
+    'dictionary': 'A collection of key-value pairs.',
+    'function': 'A block of reussable code.'
+}
+
+print("\nTask 3:")
+for word, meaning in definitions_dict.items():
+    print(f"{word}:\n{meaning}\n")
+
+# Task 4
+print("\nTask 4:")
+for key, value in definitions_dict.items():
+    print(f"{key}: {value}")

@@ -1,0 +1,16 @@
+sc_counties_dict = {
+    'Anderson': 'Anderson',
+    'Charleston': 'Charleston',
+    'Greenville': 'Greenville',
+    'Lexington': 'Lexington',
+    'Richland': 'Columbia',
+    'Spartanburg': 'Spartanburg'
+}
+
+print("\nTask 6:")
+counties_list = ['Anderson', 'Charleston', 'Greenville', 'Lexington', 'Richland', 'Spartanburg', 'Florence', 'Horry', 'Berkeley', 'Dorchester']
+for county in counties_list:
+    if county in sc_counties_dict:
+        print(f"{county} is in our dictionary, and the capital/seat is {sc_counties_dict[county]}.")
+    else:
+        print(f"{county} is not in our dictionary. We will add this county shortly. Thanks!")

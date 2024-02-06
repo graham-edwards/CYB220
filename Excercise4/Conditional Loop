@@ -1,0 +1,9 @@
+active = True
+while active:
+    user_input = input("Enter a value (type 'quit' to exit): ")
+
+    if user_input.lower() == 'quit':
+        break
+
+    # Perform operations with the user input here
+    print(f"Processing {user_input}...")

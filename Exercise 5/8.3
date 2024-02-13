@@ -1,0 +1,9 @@
+def make_shirt(size, message='I love Python'):
+    """Print a sentence summarizing the size of the shirt and the message printed on it."""
+    print(f"\nI'm going to make a {size.title()} t-shirt with the message: {message.title()}")
+
+# Call the function once using positional arguments
+make_shirt('large')
+
+# Call the function a second time using keyword arguments
+make_shirt(message="I love Python programming", size='medium')

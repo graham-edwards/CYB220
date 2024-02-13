@@ -1,0 +1,12 @@
+def order_sandwich(*items):
+    sandwich = {}
+    sandwich['items'] = items
+    print("Order Summary:")
+    for i, item in enumerate(items, 1):
+        print(f"{i}. {item}")
+    return sandwich
+
+# Call the function three times, using a different number of arguments each time
+order_sandwich('ham', 'cheese', 'lettuce')
+order_sandwich('turkey', 'avocado', 'tomato', 'mustard')
+order_sandwich('chicken', 'bacon', 'pickles', 'mayo', 'ketchup')

@@ -1,0 +1,112 @@
+# message_module.py
+
+def display_message():
+    """Display a message about what you're learning."""
+    msg = "I'm learning about Python imports."
+    print(msg)
+
+
+
+
+# main.py
+
+# Import the module
+import message_module
+
+# Call the function using the imported module name
+message_module.display_message()
+
+# Import the function directly
+from message_module import display_message
+
+# Call the function directly
+display_message()
+
+# Import the function with an alias
+from message_module import display_message as dm
+
+# Call the function with the alias
+dm()
+
+# Import the whole module with an alias
+import message_module as mm
+
+# Call the function using the alias and dot notation
+mm.display_message()
+
+# Import all functions from the module
+from message_module import *
+
+# Call the function directly
+display_message()
+
+
+
+
+
+
+# functions.py
+
+def display_message():
+    """Display a message about what you're learning."""
+    msg = "I'm learning to store code in functions."
+    print(msg)
+
+def favorite_book(title):
+    """Display a message about someone's favorite book."""
+    print(title + " is one of my favorite books.")
+
+def make_shirt(size, message='I love Python'):
+    """Summarize the shirt that's going to be made."""
+    print("\nI'm going to make a " + size + " t-shirt.")
+    print('It will say, "' + message + '"')
+
+def city_country(city, country='Chile'):
+    """Return a string with city and country information."""
+    return(city.title() + ", " + country.title())
+
+def make_album(artist, title, tracks=0):
+    """Build a dictionary containing information about an album."""
+    album_dict = {
+        'artist': artist.title(),
+        'title': title.title(),
+    }
+    if tracks:
+        album_dict['tracks'] = tracks
+    return album_dict
+
+def make_great(magicians):
+    """Add 'the Great!' to each magician's name."""
+    great_magicians = []
+    while magicians:
+        magician = magicians.pop()
+        great_magician = magician + ' the Great'
+        great_magicians.append(great_magician)
+    for great_magician in great_magicians:
+        magicians.append(great_magician)
+
+
+
+
+
+
+# main.py
+
+from functions import display_message, favorite_book, make_shirt, city_country, make_album, make_great
+
+def main():
+    display_message()
+    favorite_book('The Abstract Wild')
+    make_shirt('large', 'I love Python!')
+    make_shirt(size='medium', message='Readability counts.')
+    make_shirt('small', 'Programmers are loopy.')
+
+    print(city_country('santiago'))
+    print(city_country('ushuaia', 'argentina'))
+    print(city_country('longyearbyen', 'svalbard'))
+
+    album1 = make_album('metallica', 'ride the lightning')
+    print(album1)
+    album2 = make
+
+

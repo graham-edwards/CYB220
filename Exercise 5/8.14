@@ -1,0 +1,11 @@
+def make_car(manufacturer, model, **kwargs):
+    car = {
+        'manufacturer': manufacturer,
+        'model': model,
+    }
+    for key, value in kwargs.items():
+        car[key] = value
+    return car
+
+car = make_car('subaru', 'outback', color='blue', tow_package=True)
+print(car)

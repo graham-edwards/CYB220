@@ -1,9 +1,13 @@
-def make_album(artist, title, num_songs=None):
-    """Return a dictionary of album information."""
-    album = {'artist': artist, 'title': title}
-    if num_songs:
+def make_album(artist, album_title, num_songs=None):
+    album = {'artist': artist, 'album_title': album_title}
+    if num_songs is not None:
         album['num_songs'] = num_songs
     return album
 
-print(make_album('Artist Name', 'Album Title'))
-print(make_album('Another Artist', 'Another Album', 12))
+album1 = make_album('The Beatles', 'Abbey Road')
+album2 = make_album('Queen', 'A Night at the Opera', 14)
+album3 = make_album('Nirvana', 'Nevermind', 10)
+
+print(album1)
+print(album2)
+print(album3)

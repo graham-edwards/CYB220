@@ -1,0 +1,22 @@
+def send_messages(messages):
+    """Print each message and remove it from the list"""
+    sent_messages = []
+    while messages:
+        current_message = messages.pop()
+        print(f"Sending message: {current_message}")
+        sent_messages.append(current_message)
+    return sent_messages
+
+def show_messages(messages):
+    """Print each message in the list"""
+    for message in messages:
+        print(message)
+
+messages = ["Hello, world!", "Hello again!", "It's good to see you!"]
+archived_messages = messages.copy()
+sent_messages = send_messages(messages)
+
+print("\nSent messages:")
+show_messages(sent_messages)
+print("\nOriginal messages:")
+show_messages(archived_messages)

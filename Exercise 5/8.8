@@ -1,0 +1,17 @@
+def make_album(artist, title, num_songs=None):
+    """Return a dictionary of album information."""
+    album = {'artist': artist, 'title': title}
+    if num_songs:
+        album['num_songs'] = num_songs
+    return album
+
+while True:
+    print("\nEnter 'q' at any time to quit.")
+    artist = input("Enter the artist's name: ")
+    if artist.lower() == 'q':
+        break
+    title = input("Enter the album title: ")
+    if title.lower() == 'q':
+        break
+    album = make_album(artist, title)
+    print(album)

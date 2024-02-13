@@ -1,0 +1,20 @@
+
+
+def display_message():
+    """Display a message about what I'm learning."""
+    msg = "I'm learning to store code in functions."
+    print(msg)
+
+def favorite_book(title):
+    """Display a message about someone's favorite book."""
+    print(title + " is one of my favorite books.")
+
+
+
+
+
+
+import printing_functions
+
+printing_functions.display_message()
+printing_functions.favorite_book('The Catcher in the Rye')

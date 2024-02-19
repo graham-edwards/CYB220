@@ -1,0 +1,10 @@
+class Privileges:
+    def __init__(self, privileges):
+        self.privileges = privileges
+
+    def show_privileges(self):
+        print(f"The administrator has the following privileges: {', '.join(self.privileges)}")
+
+
+class Admin(User):
+    def __init__(self, first_name, last_name, email, phone_number, birthdate, username, password):

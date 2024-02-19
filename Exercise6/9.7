@@ -1,0 +1,35 @@
+class User:
+    def __init__(self, first_name, last_name, email, phone_number, birthdate, username, password, login_attempts=0):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.email = email
+        self.phone_number = phone_number
+        self.birthdate = birthdate
+        self.username = username
+        self.password = password
+        self.login_attempts = login_attempts
+
+    def describe_user(self):
+        print(f"{self.first_name} {self.last_name} is a user with the email {self.email}, phone number {self.phone_number}, and birthdate {self.birthdate}.")
+
+    def greet_user(self):
+        print(f"Hello, {self.first_name} {self.last_name}! Welcome back to our platform.")
+
+    def increment_login_attempts(self, increment_by=1):
+        self.login_attempts += increment_by
+
+    def reset_login_attempts(self):
+        self.login_attempts = 0
+
+
+class Admin(User):
+    def __init__(self, first_name, last_name, email, phone_number, birthdate, username, password):
+        super().__init__(first_name, last_name, email, phone_number, birthdate, username, password, 0)
+        self.privileges = ["can add post", "can delete post", "can ban user"]
+
+    def show_privileges(self):
+        print(f"The administrator {self.first_name} {self.last_name} has the following privileges: {', '.join(self.privileges)}")
+
+
+admin = Admin("Ryan", "Garner", "ryan.garner@example.com", "123-456-7890", "01/31/2012", "ryangarner", "password123")
+admin.show_privileges()

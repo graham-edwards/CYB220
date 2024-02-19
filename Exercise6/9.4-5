@@ -1,0 +1,64 @@
+class Restaurant:
+    def __init__(self, restaurant_name, cuisine_type):
+        self.restaurant_name = restaurant_name
+        self.cuisine_type = cuisine_type
+        self.number_served = 0
+
+    def describe_restaurant(self):
+        print(f"{self.restaurant_name} is a {self.cuisine_type} restaurant.")
+
+    def open_restaurant(self):
+        print(f"{self.restaurant_name} is open!")
+
+    def set_number_served(self, number):
+        self.number_served = number
+
+    def increment_number_served(self, increment_by):
+        self.number_served += increment_by
+
+    def reset_number_served(self):
+        self.number_served = 0
+
+
+class User:
+    def __init__(self, first_name, last_name, email, phone_number, birthdate, username, password, login_attempts=0):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.email = email
+        self.phone_number = phone_number
+        self.birthdate = birthdate
+        self.username = username
+        self.password = password
+        self.login_attempts = login_attempts
+
+    def describe_user(self):
+        print(f"{self.first_name} {self.last_name} is a user with the email {self.email}, phone number {self.phone_number}, and birthdate {self.birthdate}.")
+
+    def greet_user(self):
+        print(f"Hello, {self.first_name} {self.last_name}! Welcome back to our platform.")
+
+    def increment_login_attempts(self, increment_by=1):
+        self.login_attempts += increment_by
+
+    def reset_login_attempts(self):
+        self.login_attempts = 0
+
+
+restaurant = Restaurant("Italian Bistro", "Italian")
+restaurant.describe_restaurant()
+restaurant.open_restaurant()
+print(f"Number of customers served: {restaurant.number_served}")
+restaurant.set_number_served(5)
+print(f"Number of customers served: {restaurant.number_served}")
+restaurant.increment_number_served(3)
+print(f"Number of customers served: {restaurant.number_served}")
+restaurant.reset_number_served()
+print(f"Number of customers served: {restaurant.number_served}")
+
+user1 = User("James", "Ronald", "james.ronald@example.com", "123-456-7890", "12/11/2001", "jamesronald", "password123")
+user1.describe_user()
+user1.greet_user()
+user1.increment_login_attempts(3)
+print(f"Login attempts: {user1.login_attempts}")
+user1.reset_login_attempts()
+print(f"Login attempts: {user1.login_attempts}")

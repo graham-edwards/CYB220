@@ -1,0 +1,31 @@
+user_module.py:
+class User:
+    def __init__(self, first_name, last_name, email, phone_number, birthdate, username, password):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.email = email
+        self.phone_number = phone_number
+        self.birthdate = birthdate
+        self.username = username
+        self.password = password
+
+admin_module.py:
+
+from user_module import User
+
+class Privileges:
+    def __init__(self, privileges):
+        self.privileges = privileges
+
+    def show_privileges(self):
+        print(f"The administrator has the following privileges: {', '.join(self.privileges)}")
+
+
+class Admin(User):
+    def __init__(self, first_name, last_name, email, phone_number, birthdate, username, password):
+        super().__init__(first_name, last_name, email, phone_number, birthdate, username, password)
+        self.privileges = Privileges(["can add post", "can delete post", "can ban user"])
+
+
+admin = Admin("Brandon", "grech", "b.grech@andersonuniversity.edu", "123-456-7890", "05/18/1817", "bgrech", "ctf")
+admin.privileges.show_privileges()

@@ -1,0 +1,34 @@
+import random
+
+class Die:
+    def __init__(self, sides=6):
+        self.sides = sides
+
+    def roll_die(self):
+        return random.randint(1, self.sides)
+
+# 6-sided die 10 times
+d6 = Die(6)
+for _ in range(10):
+    print(d6.roll_die())
+
+# 10-sided die 10 times
+d10 = Die(10)
+for _ in range(10):
+    print(d10.roll_die())
+
+# 20-sided die 10 times
+d20 = Die(20)
+for _ in range(10):
+    print(d20.roll_die())
+
+lottery_numbers = list(range(1, 10)) + list('abcdefghij')
+winning_numbers = random.sample(lottery_numbers, 4)
+print(f"Winning numbers: {winning_numbers}")
+
+my_ticket = []
+while True:
+    my_ticket = random.sample(lottery_numbers, 4)
+    if set(my_ticket).issubset(winning_numbers):
+        print(f"It took {len(my_ticket)} tries to get a winning ticket.")
+        break

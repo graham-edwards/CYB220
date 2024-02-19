@@ -1,0 +1,45 @@
+class Restaurant:
+    def __init__(self, restaurant_name, cuisine_type):
+        self.restaurant_name = restaurant_name
+        self.cuisine_type = cuisine_type
+
+    def describe_restaurant(self):
+        print(f"{self.restaurant_name} is a {self.cuisine_type} restaurant.")
+
+    def open_restaurant(self):
+        print(f"{self.restaurant_name} is open!")
+
+
+class User:
+    def __init__(self, first_name, last_name, email, phone_number, birthdate, username, password):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.email = email
+        self.phone_number = phone_number
+        self.birthdate = birthdate
+        self.username = username
+        self.password = password
+
+    def describe_user(self):
+        print(f"{self.first_name} {self.last_name} is a user with the email {self.email}, phone number {self.phone_number}, and birthdate {self.birthdate}.")
+
+    def greet_user(self):
+        print(f"Hello, {self.first_name} {self.last_name}! Welcome back to our platform.")
+
+
+# Create instances of Restaurant and User
+restaurant = Restaurant("Italian Bistro", "Italian")
+restaurant.describe_restaurant()
+restaurant.open_restaurant()
+
+user1 = User("Brandon", "David", "brandon.davis@example.com", "123-456-7890", "01/01/1980", "brandondavid", "password123")
+user1.describe_user()
+user1.greet_user()
+
+user2 = User("David", "Crawford", "david.crawford@example.com", "987-654-3210", "02/02/1990", "davidcrawford", "password456")
+user2.describe_user()
+user2.greet_user()
+
+user3 = User("Alice", "Johnson", "alice.johnson@example.com", "789-123-4567", "03/03/1970", "alicejohnson", "password789")
+user3.describe_user()
+user3.greet_user()

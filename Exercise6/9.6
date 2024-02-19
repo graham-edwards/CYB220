@@ -1,0 +1,33 @@
+class Restaurant:
+    def __init__(self, restaurant_name, cuisine_type):
+        self.restaurant_name = restaurant_name
+        self.cuisine_type = cuisine_type
+        self.number_served = 0
+
+    def describe_restaurant(self):
+        print(f"{self.restaurant_name} is a {self.cuisine_type} restaurant.")
+
+    def open_restaurant(self):
+        print(f"{self.restaurant_name} is open!")
+
+    def set_number_served(self, number):
+        self.number_served = number
+
+    def increment_number_served(self, increment_by):
+        self.number_served += increment_by
+
+    def reset_number_served(self):
+        self.number_served = 0
+
+
+class IceCreamStand(Restaurant):
+    def __init__(self, restaurant_name, cuisine_type, flavors):
+        super().__init__(restaurant_name, cuisine_type)
+        self.flavors = flavors
+
+    def display_flavors(self):
+        print(f"Our flavors are: {', '.join(self.flavors)}")
+
+
+ice_cream_stand = IceCreamStand("Tasry Treats", "Ice Cream", ["Vanilla", "Chocolate", "Strawberry"])
+ice_cream_stand.display_flavors()

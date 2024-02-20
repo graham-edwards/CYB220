@@ -1,0 +1,15 @@
+# Continuously prompt the user for name
+while True:
+    # Get user's name
+    name = input("Please enter your name (or type 'quit' to stop): ")
+
+    # If user types 'quit', stop loop
+    if name.lower() == 'quit':
+        break
+
+    # Write user's name to guest book file
+    with open('guest_book.txt', 'a') as file:
+        file.write(name + '\n')
+
+# Print a message to indicate the program has finished
+print("Thank you for participating! All names have been added to the guest book.")

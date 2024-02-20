@@ -1,0 +1,10 @@
+try:
+    with open('text\_file.txt', 'r') as f:
+        text = f.read().lower()
+        count = text.count('the')
+        print(f"The word 'the' appears {count} times in the text.")
+except FileNotFoundError:
+    print("Error: The file is missing.")
+
+#Replace 'text_file.txt' with the name of any text file 
+#Code reads the file, converts the text to lowercase, and counts the number of times 'the' appears in the text

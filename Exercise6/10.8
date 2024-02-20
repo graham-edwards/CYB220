@@ -1,0 +1,11 @@
+try:
+    with open('cats.txt', 'r') as f:
+        cats = f.read()
+    with open('dogs.txt', 'r') as f:
+        dogs = f.read()
+    print("Cats:")
+    print(cats)
+    print("Dogs:")
+    print(dogs)
+except FileNotFoundError:
+    print("Error: One or both of the files are missing.")

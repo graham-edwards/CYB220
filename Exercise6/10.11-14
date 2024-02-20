@@ -1,0 +1,36 @@
+import json
+import os
+
+def get_new_username():
+    username = input("What is your username? ")
+    return username
+
+def get_new_favorite_number():
+    favorite_number = int(input("What is your favorite number? "))
+    return favorite_number
+
+def get_user_info():
+    username = get_new_username()
+    favorite_number = get_new_favorite_number()
+    return {"username": username, "favorite_number": favorite_number}
+
+def greet_user(user_info):
+    username = user_info["username"]
+    print(f"Welcome back, {username}!")
+    if input("Is this your correct username? (yes/no) ") != "yes":
+        username = get_new_username()
+        user_info["username"] = username
+    print(f"I know your favorite number! It's {user_info['favorite_number']}.")
+
+def remember_me():
+    if os.path.exists("user_info.json"):
+        with open("user_info.json", "r") as file:
+            user_info = json.loads(file.read())
+        greet_user(user_info)
+    else:
+        user_info = get_user_info()
+        with open("user_info.json", "w") as file:
+            file.write(json.dumps(user_info))
+        greet_user(user_info)
+
+remember_me()

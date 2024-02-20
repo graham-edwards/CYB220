@@ -1,0 +1,15 @@
+def read_file(file_path):
+    with open(file_path, "r") as file:
+        contents = file.read()
+        print(contents)
+
+def read_file_lines(file_path):
+    with open(file_path, "r") as file:
+        lines = file.readlines()
+        for line in lines:
+            print(line.strip())
+
+file_path = "learning_python.txt"
+read_file(file_path)
+print("\n")
+read_file_lines(file_path)

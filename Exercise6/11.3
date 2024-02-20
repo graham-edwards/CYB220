@@ -1,0 +1,55 @@
+employee.py:
+
+class Employee:
+    """An employee with a first name, last name, and annual salary."""
+
+    def __init__(self, first_name, last_name, annual_salary):
+        """Initialize the employee with a first name, last name, and annual salary."""
+        self.first_name = first_name
+        self.last_name = last_name
+        self.annual_salary = annual_salary
+
+    def give_raise(self, raise_amount=5000):
+        """Add a raise amount to the annual salary."""
+        self.annual_salary += raise_amount
+
+
+  test_employee.py:
+
+  import employee
+
+def test_give_default_raise():
+    """Test the give_raise() method with the default raise amount."""
+    emp = employee.Employee("John", "Doe", 50000)
+    emp.give_raise()
+    assert emp.annual_salary == 55000
+
+def test_give_custom_raise():
+    """Test the give_raise() method with a custom raise amount."""
+    emp = employee.Employee("John", "Doe", 50000)
+    emp.give_raise(10000)
+    assert emp.annual_salary == 60000
+
+def test_employee_creation():
+    """Test the Employee class creation."""
+    emp = employee.Employee("John", "Doe", 50000)
+    assert emp.first_name == "John"
+    assert emp.last_name == "Doe"
+    assert emp.annual_salary == 50000
+
+@pytest.fixture
+def emp():
+    """Create an employee instance for testing."""
+    return employee.Employee("John", "Doe", 50000)
+
+def test_give_default_raise_fixture(emp):
+    """Test the give_raise() method with the default raise amount."""
+    emp.give_raise()
+    assert emp.annual_salary == 55000
+
+def test_give_custom_raise_fixture(emp):
+    """Test the give_raise() method with a custom raise amount."""
+    emp.give_raise(10000)
+    assert emp.annual_salary == 60000
+
+    

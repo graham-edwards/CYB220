@@ -1,0 +1,11 @@
+
+#I belive there was a typo in the textbook and I think it meant to reference 10-6 in this exercise and not 10-5
+
+while True:
+    try:
+        num1 = int(input("Enter the first number: "))
+        num2 = int(input("Enter the second number: "))
+        result = num1 + num2
+        print(f"The sum of {num1} and {num2} is {result}.")
+    except ValueError:
+        print("Error: Please enter a number.")

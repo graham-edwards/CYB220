@@ -1,0 +1,9 @@
+# Open in read mode
+with open('learning_python.txt', 'r') as file:
+    # Read the entire file contents
+    contents = file.read()
+
+    # Split into lines
+    for line in contents.splitlines():
+        # Replace 'Python' with 'C'
+        print(line.replace('Python', 'C'))

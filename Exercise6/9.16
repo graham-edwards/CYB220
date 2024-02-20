@@ -1,0 +1,19 @@
+import random
+
+# Generate a random float number between 0.0 and 1.0
+print(random.random())
+
+# Generate a random integer between 1 and 10 (inclusive)
+print(random.randint(1, 10))
+
+# Generate a random element from a list
+my_list = [1, 2, 3, 4, 5]
+print(random.choice(my_list))
+
+# Shuffle a list in-place
+random.shuffle(my_list)
+print(my_list)
+
+# Initialize the random number generator with a seed value
+random.seed(123)
+print(random.random())

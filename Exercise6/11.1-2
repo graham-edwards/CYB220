@@ -1,0 +1,25 @@
+city_functions.py:
+
+def city_country(city, country, population=None):
+    """Return a string of the form City, Country - population xxx."""
+    if population:
+        return f"{city}, {country} - population {population}"
+    else:
+        return f"{city}, {country}"
+
+test_cities.py:
+
+import city_functions
+
+def test_city_country():
+    """Test the city_country function with a single argument."""
+    result = city_functions.city_country("santiago", "chile")
+    assert result == "santiago, chile"
+
+def test_city_country_population():
+    """Test the city_country function with three arguments."""
+    result = city_functions.city_country("santiago", "chile", population=5000000)
+    assert result == "santiago, chile - population 5000000"
+
+test_city_country()
+test_city_country_population()

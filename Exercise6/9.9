@@ -1,0 +1,42 @@
+class Battery:
+    """A simple attempt to model a battery for an electric car."""
+
+    def __init__(self, battery_size=40):
+        """Initialize the battery's attributes."""
+        self.battery_size = battery_size
+
+    def describe_battery(self):
+        """Print a statement describing the battery size."""
+        if self.battery_size == 40:
+            print("This car has a small battery.")
+        elif self.battery_size == 65:
+            print("This car has a medium-sized battery.")
+        else:
+            print("This car has a large battery.")
+
+    def get_range(self):
+        """Print a statement about the range this battery provides."""
+        if self.battery_size == 40:
+            range = 150
+        elif self.battery_size == 65:
+            range = 225
+
+        print(f"This car can go about {range} miles on a full charge.")
+
+    def upgrade_battery(self):
+        """Upgrade the battery to a medium-sized battery."""
+        if self.battery_size != 65:
+            self.battery_size = 65
+            print("Battery upgraded to medium-sized.")
+
+
+Example:
+
+my_leaf = ElectricCar('nissan', 'leaf', 2024, Battery())
+print(my_leaf.get_descriptive_name())
+my_leaf.battery.describe_battery()
+my_leaf.battery.get_range()
+my_leaf.battery.upgrade_battery()
+my_leaf.battery.get_range()
+
+

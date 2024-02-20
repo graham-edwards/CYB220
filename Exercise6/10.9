@@ -1,0 +1,14 @@
+try:
+    with open('cats.txt', 'r') as f:
+        cats = f.read()
+except FileNotFoundError:
+    cats = ""
+try:
+    with open('dogs.txt', 'r') as f:
+        dogs = f.read()
+except FileNotFoundError:
+    dogs = ""
+print("Cats:")
+print(cats)
+print("Dogs:")
+print(dogs)

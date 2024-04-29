@@ -26,10 +26,3 @@ ssh_server.start_server(server=paramiko.ServerInterface())
 
 # Wait for a connection from the Linux machine
 channel = ssh_server.accept(10)
-
-# Send a command to stop the Python script and delete the file
-channel.send("python stop_script.py")
-
-# Clean up the SSH server and GUI
-ssh_server.close()
-root.destroy()
